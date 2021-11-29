@@ -32,32 +32,40 @@ namespace XMLWeather
             cloudImage = Properties.Resources.cloudImage;
 
             cityOutput.Text = Form1.days[0].location;
-            tempLabel.Text = Form1.days[0].currentTemp;
-            minOutput.Text = Form1.days[0].tempLow;
-            maxOutput.Text = Form1.days[0].tempHigh;
+            currentOutput.Text = Convert.ToDouble(Form1.days[0].currentTemp).ToString("#°C");
+            minOutput.Text = Convert.ToDouble(Form1.days[0].tempLow).ToString("#0°C");
+            maxOutput.Text = Convert.ToDouble(Form1.days[0].tempHigh).ToString("#0°C");
+            
+
             if (Convert.ToInt32(Form1.days[0].condition) >= 200 && Convert.ToInt32(Form1.days[0].condition) < 300)
             {
-                pictureBox1.Image = stormImage;
+                BackgroundImage = stormImage;
+                conditionOutput.Text = "Thunderstorm";
             }
-            if (Convert.ToInt32(Form1.days[0].condition) >= 300 && Convert.ToInt32(Form1.days[0].condition) < 600)
+            else if (Convert.ToInt32(Form1.days[0].condition) >= 300 && Convert.ToInt32(Form1.days[0].condition) < 600)
             {
-                pictureBox1.Image = rainImage;
+                BackgroundImage = rainImage;
+                conditionOutput.Text = "Rain";
             }
-            if (Convert.ToInt32(Form1.days[0].condition) >= 600 && Convert.ToInt32(Form1.days[0].condition) < 700)
+            else if (Convert.ToInt32(Form1.days[0].condition) >= 600 && Convert.ToInt32(Form1.days[0].condition) < 700)
             {
-                pictureBox1.Image = snowImage;
+                BackgroundImage = snowImage;
+                conditionOutput.Text = "Snow";
             }
-            if (Convert.ToInt32(Form1.days[0].condition) >= 700 && Convert.ToInt32(Form1.days[0].condition) < 800)
+            else if (Convert.ToInt32(Form1.days[0].condition) >= 700 && Convert.ToInt32(Form1.days[0].condition) < 800)
             {
-                pictureBox1.Image = cloudImage;
+                BackgroundImage = cloudImage;
+                conditionOutput.Text = "Cloudy";
             }
-            if (Convert.ToInt32(Form1.days[0].condition) >= 801 && Convert.ToInt32(Form1.days[0].condition) < 900)
+            else if (Convert.ToInt32(Form1.days[0].condition) >= 801 && Convert.ToInt32(Form1.days[0].condition) < 900)
             {
-                pictureBox1.Image = cloudImage;
+                BackgroundImage = cloudImage;
+                conditionOutput.Text = "Cloudy";
             }
-            if (Convert.ToInt32(Form1.days[0].condition) == 800)
+            else
             {
-                pictureBox1.Image = sunImage;
+                BackgroundImage = sunImage;
+                conditionOutput.Text = "Sunny";
             }
 
         }
@@ -70,7 +78,6 @@ namespace XMLWeather
             ForecastScreen fs = new ForecastScreen();
             f.Controls.Add(fs);
         }
-
 
     }
 }
