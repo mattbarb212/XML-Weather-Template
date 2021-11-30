@@ -220,8 +220,12 @@ namespace XMLWeather
             Form1.city = citySearchInput.Text;
 
             // clear the list of days
+            Form1.days.Clear();
             //call extract forecast from form1
+            Form1.ExtractForecast();
             //call extract current  from form1
+            Form1.ExtractCurrent();
+
             displayForecast();
         }
     }
