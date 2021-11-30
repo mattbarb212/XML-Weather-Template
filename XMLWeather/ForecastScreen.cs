@@ -217,16 +217,23 @@ namespace XMLWeather
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            Form1.city = citySearchInput.Text;
+            try
+            { 
+                Form1.city = citySearchInput.Text;
 
-            // clear the list of days
-            Form1.days.Clear();
-            //call extract forecast from form1
-            Form1.ExtractForecast();
-            //call extract current  from form1
-            Form1.ExtractCurrent();
+                // clear the list of days
+                Form1.days.Clear();
+                //call extract forecast from form1
+                Form1.ExtractForecast();
+                //call extract current  from form1
+                Form1.ExtractCurrent();
 
-            displayForecast();
+                displayForecast();
+            }
+            catch
+            {
+                cityOutput.Text = "City Not Found";
+            }
         }
     }
 }

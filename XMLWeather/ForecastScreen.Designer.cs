@@ -58,7 +58,7 @@
             this.max5 = new System.Windows.Forms.Label();
             this.citySearchInput = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cityOutput = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -359,6 +359,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.searchButton.Location = new System.Drawing.Point(448, 18);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(94, 22);
@@ -367,23 +368,23 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // label1
+            // cityOutput
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(183, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 103;
-            this.label1.Text = "Search City";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cityOutput.BackColor = System.Drawing.Color.White;
+            this.cityOutput.ForeColor = System.Drawing.Color.Black;
+            this.cityOutput.Location = new System.Drawing.Point(111, 18);
+            this.cityOutput.Name = "cityOutput";
+            this.cityOutput.Size = new System.Drawing.Size(172, 20);
+            this.cityOutput.TabIndex = 103;
+            this.cityOutput.Text = "Search City";
+            this.cityOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForecastScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cityOutput);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.citySearchInput);
             this.Controls.Add(this.min5);
@@ -458,6 +459,6 @@
         private System.Windows.Forms.Label max5;
         private System.Windows.Forms.TextBox citySearchInput;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label cityOutput;
     }
 }
